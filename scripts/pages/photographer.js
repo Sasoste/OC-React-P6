@@ -1,1 +1,1 @@
-//Mettre le code JavaScript lié à la page photographer.html
+// factory pattern : on crée, on instancie, faire attention au cours
