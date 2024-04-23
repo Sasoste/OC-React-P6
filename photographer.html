@@ -1,37 +1,80 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
-  </head>
-  <body>
-    <header>
-      <img src="assets/images/logo.png" class="logo" />
-    </header>
-    <main id="main">
-      <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+
+<head>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
+  <script src="https://kit.fontawesome.com/a18b407708.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header>
+    <a href="./index.html">
+      <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" />
+    </a>
+  </header>
+  <main id="main">
+    <div class="photograph-header">
+      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+    </div>
+
+    <div class="sorting_section">
+      <h2>Trier par</h2>
+      <div class="dropdown">
+        <button class="btn_sort selected" data-sort="title" aria-label="Sort by title">Titre <span
+            class="fa fa-chevron-down"></span></button>
+        <div class="dropdown_content">
+          <button class="btn_sort" data-sort="likes" aria-label="Sort by popularity">Popularité</button>
+          <button class="btn_sort" data-sort="date" aria-label="Sort by date">Date</button>
+        </div>
       </div>
-    </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
+    </div>
+
+    <div class="media-container">
+    </div>
+
+    <div class="likes-and-price">
+    </div>
+  </main>
+
+  <div id="contact_modal"> <!-- Essayer div dans div pour mettre l'overflow sur celle du milieu-->
+    <div>
+      <div class="modal">
+        <header>
           <h2>Contactez-moi</h2>
           <img src="assets/icons/close.svg" onclick="closeModal()" />
         </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
+        <form>
+          <label>Prénom</label>
+          <input />
+          <label>Nom</label>
+          <input />
+          <label>Email</label>
+          <input />
+          <label>Votre message</label>
+          <input class="message_input" />
           <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
-    <script src="/scripts/pages/photographer.js"></script>
-    <script src="/scripts/utils/contactForm.js"></script>
-  </body>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="lightbox" class="lightbox" aria-label="image closeup view">
+    <i class="fa-solid fa-xmark close"></i>
+    <a href=""><i class="fa-solid fa-chevron-left prev"></i></a>
+    <div class="lightbox-content">
+
+    </div>
+    <a href=""></a><i class="fa-solid fa-chevron-right next"></i></a>
+  </div>
+
+
+  <script src="/scripts/utils/photographer.js/contactForm.js"></script>
+  <script type="module" src="/scripts/pages/photographer.js"></script>
+</body>
+
 </html>
