@@ -14,6 +14,7 @@ export function lightbox() {
         if (mediaType === 'img') {
             mediaInLightbox = document.createElement('img');
             mediaInLightbox.src = media.src;
+            mediaInLightbox.alt = mediaTitleText;
         } else if (mediaType === 'video') {
             mediaInLightbox = document.createElement('video');
             mediaInLightbox.src = media.src;
@@ -38,9 +39,19 @@ export function lightbox() {
         });
     });
 
+    // Fermer
     document.querySelector('.close').addEventListener('click', () => {
         lightbox.style.display = 'none';
     });
+
+    // Fermer avec échap 
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "Escape") {
+            lightbox.style.display = 'none';
+        }
+    });
+
 
     // Précédent
     document.querySelector('.prev').addEventListener('click', (e) => {
@@ -54,5 +65,18 @@ export function lightbox() {
         e.preventDefault();
         currentIndex = (currentIndex + 1) % mediaItems.length;
         displayMediaInLightbox(currentIndex);
+    });
+
+    // Précédent et suivant avec clavier
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "ArrowRight") {
+            event.preventDefault();
+            currentIndex = (currentIndex + 1) % mediaItems.length;
+            displayMediaInLightbox(currentIndex);
+        } else if (event.key === "ArrowLeft") {
+            event.preventDefault();
+            currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+            displayMediaInLightbox(currentIndex);
+        }
     });
 }

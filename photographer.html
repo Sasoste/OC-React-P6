@@ -19,17 +19,17 @@
   </header>
   <main id="main">
     <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+      <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
     </div>
 
     <div class="sorting_section">
       <h2>Trier par</h2>
       <div class="dropdown">
-        <button class="btn_sort selected" data-sort="title" aria-label="Sort by title">Titre <span
-            class="fa fa-chevron-down"></span></button>
+        <button class="btn_sort selected" data-sort="title" aria-label="Sort by title" role="button"
+          aria-haspopup="listbox" aria-expanded>Titre <span class="fa fa-chevron-down"></span></button>
         <div class="dropdown_content">
-          <button class="btn_sort" data-sort="likes" aria-label="Sort by popularity">Popularité</button>
-          <button class="btn_sort" data-sort="date" aria-label="Sort by date">Date</button>
+          <button class="btn_sort" data-sort="likes" aria-label="Sort by popularity" role="listbox">Popularité</button>
+          <button class="btn_sort" data-sort="date" aria-label="Sort by date" role="listbox">Date</button>
         </div>
       </div>
     </div>
@@ -42,34 +42,32 @@
   </main>
 
   <div id="contact_modal"> <!-- Essayer div dans div pour mettre l'overflow sur celle du milieu-->
-    <div>
-      <div class="modal">
-        <header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-        <form>
-          <label>Prénom</label>
-          <input />
-          <label>Nom</label>
-          <input />
-          <label>Email</label>
-          <input />
-          <label>Votre message</label>
-          <input class="message_input" />
-          <button class="contact_button">Envoyer</button>
-        </form>
-      </div>
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" />
+      </header>
+      <form>
+        <label for="first-name">Prénom</label>
+        <input id="first-name" aria-label="First Name" />
+        <label for="last-name">Nom</label>
+        <input id="last-name" aria-label="Last Name" />
+        <label for="mail">Email</label>
+        <input id="mail" aria-label="Email" />
+        <label for="message">Votre message</label>
+        <input class="message_input" id="message" aria-label="Your message" />
+        <button class="contact_button" aria-label="Send">Envoyer</button>
+      </form>
     </div>
   </div>
 
   <div id="lightbox" class="lightbox" aria-label="image closeup view">
-    <i class="fa-solid fa-xmark close"></i>
-    <a href=""><i class="fa-solid fa-chevron-left prev"></i></a>
+    <i class="fa-solid fa-xmark close" aria-label="Close dialog"></i>
+    <a href=""><i class="fa-solid fa-chevron-left prev" aria-label="Previous image"></i></a>
     <div class="lightbox-content">
 
     </div>
-    <a href=""></a><i class="fa-solid fa-chevron-right next"></i></a>
+    <a href=""></a><i class="fa-solid fa-chevron-right next" aria-label="Next image"></i></a>
   </div>
 
 

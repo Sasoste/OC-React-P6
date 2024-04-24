@@ -22,6 +22,7 @@ export default class Photographer {
     const h2 = document.createElement("h2");
     h2.textContent = this.name;
     h2.className = "name";
+    h2.setAttribute("aria-label", this.name)
     const h3 = document.createElement("h3");
     h3.textContent = `${this.city}, ${this.country}`;
     h3.className = "location";

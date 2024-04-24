@@ -28,6 +28,8 @@ export async function displayPhotographer(id) {
         div.appendChild(taglineSpan);
         header.insertBefore(div, header.firstChild);
         header.appendChild(img);
+
+        document.getElementById("contact_modal").setAttribute("aria-label", `Contact me ${name}`)
     } else {
         window.location.href = '/index.html';
     }

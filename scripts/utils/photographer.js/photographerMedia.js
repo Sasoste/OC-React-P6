@@ -44,7 +44,7 @@ export default class MediaDisplay {
             if (mediaElement.image) {
                 mediaDomElement = document.createElement('img');
                 mediaDomElement.src = mediaPath;
-                mediaDomElement.alt = mediaElement.title;
+                mediaDomElement.alt = mediaElement.title + ", closeup view";
                 mediaDomElement.setAttribute('data-type', 'image');
                 mediaDomElement.setAttribute('data-title', mediaElement.title);
                 element.appendChild(mediaDomElement);
