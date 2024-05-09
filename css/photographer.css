@@ -46,7 +46,8 @@ body {
     color: #525252;
 }
 
-.contact_button {
+.contact_button,
+.send_button {
     font-size: 20px;
     font-weight: bold;
     color: white;
@@ -68,7 +69,6 @@ body {
     background-color: rgba(0, 0, 0, 0.1);
     width: 100%;
     min-height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     overflow-y: auto;

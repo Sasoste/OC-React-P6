@@ -71,7 +71,7 @@ export default class MediaDisplay {
             likes.setAttribute('data-id', media.id);
             likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart" aria-hidden="true"></i>`;
 
-            likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia));
+            likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia, this.photographerId));
 
             infoContainer.appendChild(likes);
             element.appendChild(infoContainer);

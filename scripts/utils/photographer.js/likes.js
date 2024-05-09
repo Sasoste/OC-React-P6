@@ -1,6 +1,6 @@
 import { updateTotalLikes } from "./totalLikes.js";
 
-export function toggleLike(event, likedMedia, mediaDisplay, mediaData) {
+export function toggleLike(event, likedMedia, mediaDisplay, mediaData, photographerId) {
     const mediaId = parseInt(event.target.closest('.media-likes').getAttribute('data-id'), 10);
     const likesElement = event.target.closest('.media-info').querySelector('.media-likes');
     const sortBtn = document.querySelector('.btn_sort.selected');
@@ -15,13 +15,11 @@ export function toggleLike(event, likedMedia, mediaDisplay, mediaData) {
         likedMedia.add(mediaId);
     }
 
-    mediaItem.likes = currentLikes; // Met à jour le nombre de likes dans l'objet des médias
+    mediaItem.likes = currentLikes;
     likesElement.innerHTML = `${currentLikes} <i class="fa fa-heart" aria-hidden="true"></i>`;
 
     // Met à jour les likes totaux chaque fois que toggleLike est appelé
-    updateTotalLikes();
-
-    // Rafraîchit l'affichage du total de likes
+    updateTotalLikes(photographerId);
     const sortType = sortBtn.getAttribute('data-sort');
     mediaDisplay.displayMedia(sortType);
 }

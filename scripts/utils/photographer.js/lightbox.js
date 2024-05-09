@@ -39,12 +39,14 @@ export function lightbox() {
         });
     });
 
+    function isLightboxDisplayed() {
+        return lightbox.style.display === 'flex';
+    }
+
     // Fermer
     document.querySelector('.close').addEventListener('click', () => {
         lightbox.style.display = 'none';
     });
-
-    // Fermer avec échap 
 
     document.addEventListener('keydown', (event) => {
         if (event.key === "Escape") {
@@ -53,30 +55,30 @@ export function lightbox() {
     });
 
 
-    // Précédent
+    // Gestion des flèches de la lightbox
     document.querySelector('.prev').addEventListener('click', (e) => {
-        e.preventDefault(); // Empêche le comportement par défaut des liens
+        e.preventDefault();
         currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
         displayMediaInLightbox(currentIndex);
     });
 
-    // Suivant
     document.querySelector('.next').addEventListener('click', (e) => {
         e.preventDefault();
         currentIndex = (currentIndex + 1) % mediaItems.length;
         displayMediaInLightbox(currentIndex);
     });
 
-    // Précédent et suivant avec clavier
     document.addEventListener('keydown', (event) => {
-        if (event.key === "ArrowRight") {
-            event.preventDefault();
-            currentIndex = (currentIndex + 1) % mediaItems.length;
-            displayMediaInLightbox(currentIndex);
-        } else if (event.key === "ArrowLeft") {
-            event.preventDefault();
-            currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
-            displayMediaInLightbox(currentIndex);
+        if (isLightboxDisplayed()) {
+            if (event.key === "ArrowRight") {
+                event.preventDefault();
+                currentIndex = (currentIndex + 1) % mediaItems.length;
+                displayMediaInLightbox(currentIndex);
+            } else if (event.key === "ArrowLeft") {
+                event.preventDefault();
+                currentIndex = (currentIndex - 1 + mediaItems.length) % mediaItems.length;
+                displayMediaInLightbox(currentIndex);
+            }
         }
     });
 }

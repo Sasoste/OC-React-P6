@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
 <head>
   <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -19,7 +19,7 @@
   </header>
   <main id="main">
     <div class="photograph-header">
-      <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
+      <button class="contact_button" aria-label="Contact Me">Contactez-moi</button>
     </div>
 
     <div class="sorting_section">
@@ -41,11 +41,11 @@
     </div>
   </main>
 
-  <div id="contact_modal"> <!-- Essayer div dans div pour mettre l'overflow sur celle du milieu-->
+  <div id="contact_modal">
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" alt="Close Contact form" />
+        <img src="assets/icons/close.svg" class="close_button" alt="Close Contact form" />
       </header>
       <form>
         <label for="first-name">Prénom</label>
@@ -56,7 +56,7 @@
         <input id="mail" aria-label="Email" />
         <label for="message">Votre message</label>
         <input class="message_input" id="message" aria-label="Your message" />
-        <button class="contact_button" aria-label="Send">Envoyer</button>
+        <button class="send_button" aria-label="Send">Envoyer</button>
       </form>
     </div>
   </div>
