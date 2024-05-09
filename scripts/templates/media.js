@@ -1,7 +1,3 @@
-import { getMediaData } from '../utils/data.js';
-
-const data = await getMediaData();
-
 class Media {
     constructor(data) {
         this.id = data.id;

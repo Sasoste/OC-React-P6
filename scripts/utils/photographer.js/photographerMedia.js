@@ -27,8 +27,6 @@ export default class MediaDisplay {
             }
         });
 
-
-
         const mediaContainer = document.querySelector('.media-container');
         mediaContainer.innerHTML = '';
 
