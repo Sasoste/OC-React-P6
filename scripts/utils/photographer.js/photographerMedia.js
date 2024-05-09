@@ -34,7 +34,7 @@ export default class MediaDisplay {
 
         filteredMedia.forEach(media => {
             const mediaElement = mediaType(media);
-            const element = document.createElement('div');
+            const element = document.createElement('figure');
             element.className = 'media-item';
 
             const mediaPath = `./assets/images/${this.photographerName}/${mediaElement.image || mediaElement.video}`;
@@ -57,10 +57,10 @@ export default class MediaDisplay {
                 element.appendChild(mediaDomElement);
             }
 
-            const infoContainer = document.createElement('div');
+            const infoContainer = document.createElement('figcaption');
             infoContainer.className = 'media-info';
 
-            const title = document.createElement('span');
+            const title = document.createElement('h2');
             title.className = 'media-title';
             title.textContent = mediaElement.title;
             infoContainer.appendChild(title);
@@ -69,7 +69,7 @@ export default class MediaDisplay {
             likes.className = 'media-likes';
             likes.setAttribute('aria-label', 'likes');
             likes.setAttribute('data-id', media.id);
-            likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart" aria-hidden="true"></i>`;
+            likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart"></i>`;
 
             likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia, this.photographerId));
 
