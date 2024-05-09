@@ -11,6 +11,7 @@ export default class MediaDisplay {
         this.likedMedia = new Set();
     }
 
+    // Tri
     async displayMedia(sortBy = 'title') {
         const { media } = await getMediaData();
         const filteredMedia = media.filter(media => media.photographerId === this.photographerId);
@@ -27,6 +28,7 @@ export default class MediaDisplay {
             }
         });
 
+        // Affichage des médias 
         const mediaContainer = document.querySelector('.media-container');
         mediaContainer.innerHTML = '';
 

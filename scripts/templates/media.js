@@ -1,3 +1,4 @@
+// Factory Pattern pour la gestion image/vidéo
 class Media {
     constructor(data) {
         this.id = data.id;

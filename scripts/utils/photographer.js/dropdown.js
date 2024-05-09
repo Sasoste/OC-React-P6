@@ -12,7 +12,7 @@ export function setupDropdown(mediaDisplay) {
             if (option.sort !== selectedCriteria) {
                 const button = document.createElement('button');
                 button.textContent = option.text;
-                button.setAttribute('data-sort', option.sort); // Utilisez 'likes' au lieu de 'popularité'
+                button.setAttribute('data-sort', option.sort);
                 button.className = 'btn_sort';
                 button.addEventListener('click', function () {
                     selectSortOption(this);

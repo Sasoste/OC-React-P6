@@ -1,5 +1,6 @@
 import { updateTotalLikes } from "./totalLikes.js";
 
+// Ajout de like sur média 
 export function toggleLike(event, likedMedia, mediaDisplay, mediaData, photographerId) {
     const mediaId = parseInt(event.target.closest('.media-likes').getAttribute('data-id'), 10);
     const likesElement = event.target.closest('.media-info').querySelector('.media-likes');

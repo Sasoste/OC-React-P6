@@ -4,7 +4,7 @@ export async function updateTotalLikes(id) {
     const photographerp = await getPhotographerData(id);
     if (!photographerp) {
         console.error('Aucun photographe trouvé avec l\'ID:', id);
-        return; // Arrêt de la fonction si aucun photographe n'est trouvé
+        return;
     }
     const price = photographerp.price;
     if (price === undefined) {
