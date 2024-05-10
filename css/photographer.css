@@ -207,7 +207,7 @@ form input {
     display: flex;
     flex-wrap: wrap;
     gap: 20px 95px;
-    font: 'DM Sans';
+    font-family: 'DM Sans';
 }
 
 
