@@ -32,16 +32,23 @@ export function lightbox() {
         lightbox.style.display = 'flex';
     };
 
+    function isLightboxDisplayed() {
+        return lightbox.style.display === 'flex';
+    }
+
     mediaItems.forEach((item, index) => {
         item.addEventListener('click', () => {
             currentIndex = index;
             displayMediaInLightbox(currentIndex);
         });
-    });
 
-    function isLightboxDisplayed() {
-        return lightbox.style.display === 'flex';
-    }
+        item.addEventListener('keydown', (event) => {
+            if (event.key === "Enter" && !isLightboxDisplayed()) {
+                currentIndex = index;
+                displayMediaInLightbox(currentIndex);
+            }
+        });
+    });
 
     // Fermer
     document.querySelector('.close').addEventListener('click', () => {

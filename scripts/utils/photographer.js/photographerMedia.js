@@ -47,6 +47,7 @@ export default class MediaDisplay {
                 mediaDomElement.alt = mediaElement.title + ", closeup view";
                 mediaDomElement.setAttribute('data-type', 'image');
                 mediaDomElement.setAttribute('data-title', mediaElement.title);
+                mediaDomElement.setAttribute("tabindex", 0);
                 element.appendChild(mediaDomElement);
             } else if (mediaElement.video) {
                 mediaDomElement = document.createElement('video');
@@ -54,6 +55,7 @@ export default class MediaDisplay {
                 mediaDomElement.controls = true;
                 mediaDomElement.setAttribute('data-type', 'video');
                 mediaDomElement.setAttribute('data-title', mediaElement.title);
+                mediaDomElement.setAttribute("tabindex", 0);
                 element.appendChild(mediaDomElement);
             }
 
@@ -69,7 +71,7 @@ export default class MediaDisplay {
             likes.className = 'media-likes';
             likes.setAttribute('aria-label', 'likes');
             likes.setAttribute('data-id', media.id);
-            likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart"></i>`;
+            likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart" role="img" aria-label="like"></i>`;
 
             likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia, this.photographerId));
 
