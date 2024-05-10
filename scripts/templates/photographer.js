@@ -1,3 +1,5 @@
+// Classe pour l'affichage des photographes sur index.html
+
 export default class Photographer {
   constructor(data) {
     const { name, portrait, city, country, tagline, price, id } = data;
@@ -18,20 +20,23 @@ export default class Photographer {
     const img = document.createElement("img");
     img.className = "img";
     img.src = this.picture;
-    img.alt = "";
+    img.alt = `${this.name}`;
     const h2 = document.createElement("h2");
     h2.textContent = this.name;
     h2.className = "name";
-    h2.setAttribute("aria-label", this.name)
+    h2.setAttribute("aria-label", this.name);
     const h3 = document.createElement("h3");
     h3.textContent = `${this.city}, ${this.country}`;
     h3.className = "location";
+    h3.setAttribute("aria-label", `${this.city}, ${this.country}`);
     const taglineSpan = document.createElement("span");
     taglineSpan.textContent = this.tagline;
     taglineSpan.className = "tagline";
+    taglineSpan.setAttribute("aria-label", `${this.tagline}`);
     const priceSpan = document.createElement("span");
     priceSpan.textContent = `${this.price}€/jour`;
     priceSpan.className = "price";
+    priceSpan.setAttribute("aria-label", `${this.price}€/jour`);
 
     article.appendChild(link);
     link.appendChild(img);

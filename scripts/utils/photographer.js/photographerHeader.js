@@ -15,10 +15,13 @@ export async function displayPhotographer(id) {
         div.className = "textInfo";
         h1.textContent = name;
         h1.className = "name";
+        h1.setAttribute("aria-label", name);
         locationSpan.textContent = `${city}, ${country}`;
         locationSpan.className = "location";
+        locationSpan.setAttribute("aria-label", `${city}, ${country}`);
         taglineSpan.textContent = tagline;
         taglineSpan.className = "tagline";
+        taglineSpan.setAttribute("aria-label", tagline);
         img.src = `assets/photographers/${portrait}`;
         img.alt = name;
         img.className = "img";
