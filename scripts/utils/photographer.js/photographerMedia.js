@@ -11,7 +11,7 @@ export default class MediaDisplay {
         this.likedMedia = new Set();
     }
 
-    // Tri
+    // Gestion du tri
     async displayMedia(sortBy = 'title') {
         const { media } = await getMediaData();
         const filteredMedia = media.filter(media => media.photographerId === this.photographerId);
