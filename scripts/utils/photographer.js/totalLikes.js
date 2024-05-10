@@ -14,7 +14,7 @@ export async function updateTotalLikes(id) {
     const totalLikes = [...document.querySelectorAll('.media-likes')]
         .reduce((sum, likesElement) => sum + parseInt(likesElement.textContent.match(/\d+/)[0], 10), 0);
 
-    totalLikesContainer.innerHTML = `<span>${totalLikes} <i class="fa fa-heart" aria-hidden="true"></i></span><span class="price">${price}€/jour</span>`;
+    totalLikesContainer.innerHTML = `<span>${totalLikes} <span class="fa fa-heart" aria-hidden="true"></span></span><span class="price">${price}€/jour</span>`;
 }
 
 

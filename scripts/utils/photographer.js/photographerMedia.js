@@ -71,7 +71,7 @@ export default class MediaDisplay {
             likes.className = 'media-likes';
             likes.setAttribute('aria-label', 'likes');
             likes.setAttribute('data-id', media.id);
-            likes.innerHTML = `${mediaElement.likes} <i class="fa fa-heart" role="img" aria-label="like"></i>`;
+            likes.innerHTML = `${mediaElement.likes} <span class="fa fa-heart" role="img" aria-label="like"></span>`;
 
             likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia, this.photographerId));
 
