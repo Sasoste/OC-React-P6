@@ -1,3 +1,8 @@
+const firstName = document.getElementById('first-name');
+const lastName = document.getElementById('last-name');
+const mail = document.getElementById('mail');
+const message = document.getElementById('message');
+
 // Affichage et fermeture de la modale
 function displayModal() {
     const modal = document.getElementById("contact_modal");
@@ -27,18 +32,55 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-// Récupère les données du form et affiche dans la console
+
+
+const regexContactForm = {
+    name: /^[a-z ,.'-]+$/i,
+    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+    message: /^[a-zA-Z0-9,#!?.\-+()&"'’\s]+/,
+}
+
+function verifyInput(input, regex) {
+    return regex.test(input.value);
+};
+
+// Récupère les données du form, vérifie avec des regex puis affiche dans la console
 const sendBtn = document.querySelector('.send_button');
 sendBtn.addEventListener('click', (event) => {
     event.preventDefault();
 
-    const firstName = document.getElementById('first-name').value;
-    const lastName = document.getElementById('last-name').value;
-    const mail = document.getElementById('mail').value;
-    const message = document.getElementById('message').value;
+    let isValid = true;
+    if (!verifyInput(firstName, regexContactForm.name)) {
+        console.error("Prénom non valide.");
+        isValid = false;
+    }
 
-    console.log(firstName);
-    console.log(lastName);
-    console.log(mail);
-    console.log(message);
+    if (!verifyInput(lastName, regexContactForm.name)) {
+        console.error("Nom non valide.");
+        isValid = false;
+    }
+
+    if (!verifyInput(mail, regexContactForm.email)) {
+        console.error("Email non valide.");
+        isValid = false;
+    }
+
+    if (!verifyInput(message, regexContactForm.message)) {
+        console.error("Message non valide.");
+        isValid = false;
+    }
+
+    if (isValid) {
+        console.log("Prénom:", firstName.value);
+        console.log("Nom:", lastName.value);
+        console.log("Email:", mail.value);
+        console.log("Message:", message.value);
+
+        firstName.value = '';
+        lastName.value = '';
+        mail.value = '';
+        message.value = '';
+
+        closeModal();
+    }
 })
