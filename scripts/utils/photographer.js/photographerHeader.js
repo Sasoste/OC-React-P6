@@ -16,15 +16,19 @@ export async function displayPhotographer(id) {
         h1.textContent = name;
         h1.className = "name";
         h1.setAttribute("aria-label", name);
+        h1.tabIndex = 0;
         locationSpan.textContent = `${city}, ${country}`;
         locationSpan.className = "location";
         locationSpan.setAttribute("aria-label", `${city}, ${country}`);
+        locationSpan.tabIndex = 0;
         taglineSpan.textContent = tagline;
         taglineSpan.className = "tagline";
         taglineSpan.setAttribute("aria-label", tagline);
+        taglineSpan.tabIndex = 0;
         img.src = `assets/photographers/${portrait}`;
         img.alt = name;
         img.className = "img";
+        img.tabIndex = 0;
 
         div.appendChild(h1);
         div.appendChild(locationSpan);

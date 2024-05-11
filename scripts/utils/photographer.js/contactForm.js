@@ -8,6 +8,7 @@ function displayModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "flex";
     document.body.style.overflow = 'hidden';
+    document.querySelector('.modal').focus()
 }
 
 const contactBtn = document.querySelector('.contact_button')

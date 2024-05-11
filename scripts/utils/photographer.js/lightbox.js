@@ -40,12 +40,14 @@ export function lightbox() {
         item.addEventListener('click', () => {
             currentIndex = index;
             displayMediaInLightbox(currentIndex);
+            document.querySelector('.lightbox').focus();
         });
 
         item.addEventListener('keydown', (event) => {
             if (event.key === "Enter" && !isLightboxDisplayed()) {
                 currentIndex = index;
                 displayMediaInLightbox(currentIndex);
+                document.querySelector('.lightbox').focus();
             }
         });
     });

@@ -17,7 +17,7 @@ export function toggleLike(event, likedMedia, mediaDisplay, mediaData, photograp
     }
 
     mediaItem.likes = currentLikes;
-    likesElement.innerHTML = `${currentLikes} <i class="fa fa-heart" aria-hidden="true"></i>`;
+    likesElement.innerHTML = `${currentLikes} <span class="fa fa-heart"></span>`;
 
     // Met à jour les likes totaux chaque fois que toggleLike est appelé
     updateTotalLikes(photographerId);

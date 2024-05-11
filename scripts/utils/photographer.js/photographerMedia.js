@@ -65,13 +65,15 @@ export default class MediaDisplay {
             const title = document.createElement('h2');
             title.className = 'media-title';
             title.textContent = mediaElement.title;
+            title.tabIndex = 0;
             infoContainer.appendChild(title);
 
             const likes = document.createElement('span');
             likes.className = 'media-likes';
             likes.setAttribute('aria-label', 'likes');
             likes.setAttribute('data-id', media.id);
-            likes.innerHTML = `${mediaElement.likes} <span class="fa fa-heart" role="img" aria-label="like"></span>`;
+            likes.tabIndex = "0";
+            likes.innerHTML = `${mediaElement.likes} <span class="fa fa-heart" role="img" aria-label="like" tabindex="0"></span>`;
 
             likes.addEventListener('click', (event) => toggleLike(event, this.likedMedia, this, filteredMedia, this.photographerId));
 

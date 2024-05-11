@@ -23,7 +23,7 @@
     </section>
 
     <div class="sorting_section">
-      <h2 aria-label="Trier par">Trier par</h2>
+      <h2 aria-label="Trier par" tabindex="0">Trier par</h2>
       <div class="dropdown">
         <button class="btn_sort selected" data-sort="title" aria-label="Sort by title" role="button"
           aria-haspopup="listbox" aria-expanded>Titre <span class="fa fa-chevron-down"></span></button>
@@ -42,32 +42,32 @@
   </main>
 
   <div id="contact_modal">
-    <div class="modal">
+    <div class="modal" tabindex="0">
       <header>
-        <h2 class="contact_title"></h2>
-        <img src="assets/icons/close.svg" class="close_button" alt="Close Contact form" />
+        <h2 class="contact_title" tabindex="0"></h2>
+        <img src="assets/icons/close.svg" class="close_button" alt="Close Contact form, escape key" tabindex="0" />
       </header>
       <form>
         <label for="first-name">Prénom</label>
-        <input id="first-name" aria-label="First Name" />
+        <input id="first-name" aria-label="First Name" tabindex="0" />
         <label for="last-name">Nom</label>
-        <input id="last-name" aria-label="Last Name" />
+        <input id="last-name" aria-label="Last Name" tabindex="0" />
         <label for="mail">Email</label>
-        <input id="mail" aria-label="Email" />
+        <input id="mail" aria-label="Email" tabindex="0" />
         <label for="message">Votre message</label>
-        <input class="message_input" id="message" aria-label="Your message" />
-        <button class="send_button" aria-label="Send">Envoyer</button>
+        <input class="message_input" id="message" aria-label="Your message" tabindex="0" />
+        <button class="send_button" type="submit" aria-label="Send">Envoyer</button>
       </form>
     </div>
   </div>
 
-  <div id="lightbox" class="lightbox" aria-label="image closeup view">
-    <span class="fa-solid fa-xmark close" aria-label="Close dialog"></span>
-    <span class="fa-solid fa-chevron-left prev" aria-label="Previous image"></span>
+  <div id="lightbox" class="lightbox" aria-label="image closeup view" tabindex="0">
+    <span class="fa-solid fa-xmark close" aria-label="Close dialog, escape key" tabindex="0"></span>
+    <span class="fa-solid fa-chevron-left prev" aria-label="Previous image, left arrow" tabindex="0"></span>
     <div class="lightbox-content">
 
     </div>
-    <span class="fa-solid fa-chevron-right next" aria-label="Next image"></span>
+    <span class="fa-solid fa-chevron-right next" aria-label="Next image, right arrow" tabindex="0"></span>
   </div>
 
 
