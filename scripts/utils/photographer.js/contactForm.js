@@ -36,7 +36,7 @@ document.addEventListener('keydown', (event) => {
 
 const regexContactForm = {
     name: /^[a-z ,.'-]+$/i,
-    email: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
+    email: /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/,
     message: /^[a-zA-Z0-9,#!?.\-+()&"'’\s]+/,
 }
 
