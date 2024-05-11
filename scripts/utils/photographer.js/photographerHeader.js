@@ -33,6 +33,7 @@ export async function displayPhotographer(id) {
         header.appendChild(img);
 
         document.getElementById("contact_modal").setAttribute("aria-label", `Contact me ${name}`)
+        document.querySelector(".contact_title").innerHTML = `Contactez-moi ${name}`;
     } else {
         window.location.href = '/index.html';
     }

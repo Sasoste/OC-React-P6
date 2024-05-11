@@ -75,6 +75,7 @@ body {
     padding: 3rem 0;
 }
 
+
 .modal {
     border-radius: 5px;
     background-color: #DB8876;
@@ -91,16 +92,16 @@ body {
 .modal header {
     justify-content: space-between;
     width: 100%;
+    margin: 20px 0 30px;
 }
 
 .modal header img {
     cursor: pointer;
 }
 
-.modal header h2 {
+.contact_title {
     font-size: 64px;
     font-weight: normal;
-    text-align: center;
 }
 
 form {
